@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DracoGame.Desktop", "DracoGame.Desktop\DracoGame.Desktop.csproj", "{66BA2563-C616-41A7-A583-3C93E47BFA9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nez", "Nez", "{2AA5CE84-0FB3-4F7C-AB47-0F8C197A0713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez.PipelineImporter", "Nez\Nez.PipelineImporter\Nez.PipelineImporter.csproj", "{63E831F4-B847-4150-B5AF-CBE059EE27B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez", "Nez\Nez.Portable\Nez.csproj", "{60B7197D-D0D5-405C-90A2-A56903E9B039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DracoGame.Shared", "DracoGame.Shared\DracoGame.Shared.csproj", "{88E4FB84-61AB-4035-867C-DAA65778BB50}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63E831F4-B847-4150-B5AF-CBE059EE27B8} = {63E831F4-B847-4150-B5AF-CBE059EE27B8}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66BA2563-C616-41A7-A583-3C93E47BFA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66BA2563-C616-41A7-A583-3C93E47BFA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66BA2563-C616-41A7-A583-3C93E47BFA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66BA2563-C616-41A7-A583-3C93E47BFA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E831F4-B847-4150-B5AF-CBE059EE27B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E831F4-B847-4150-B5AF-CBE059EE27B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E831F4-B847-4150-B5AF-CBE059EE27B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E831F4-B847-4150-B5AF-CBE059EE27B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B7197D-D0D5-405C-90A2-A56903E9B039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B7197D-D0D5-405C-90A2-A56903E9B039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B7197D-D0D5-405C-90A2-A56903E9B039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B7197D-D0D5-405C-90A2-A56903E9B039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63E831F4-B847-4150-B5AF-CBE059EE27B8} = {2AA5CE84-0FB3-4F7C-AB47-0F8C197A0713}
+		{60B7197D-D0D5-405C-90A2-A56903E9B039} = {2AA5CE84-0FB3-4F7C-AB47-0F8C197A0713}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3120254B-6288-4334-843E-970D985EFD53}
+	EndGlobalSection
+EndGlobal
