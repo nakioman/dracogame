@@ -94,9 +94,9 @@ namespace Nez.Sprites
 
 		protected Vector2 _origin;
 		protected Subtexture _subtexture;
+	    private bool _originSet;
 
-
-		public Sprite()
+	    public Sprite()
 		{}
 
 
@@ -123,7 +123,7 @@ namespace Nez.Sprites
 		{
 			_subtexture = subtexture;
 
-			if( _subtexture != null )
+			if( _subtexture != null && !_originSet )
 				_origin = subtexture.origin;
 			return this;
 		}
@@ -140,6 +140,7 @@ namespace Nez.Sprites
 			{
 				_origin = origin;
 				_areBoundsDirty = true;
+			    _originSet = true;
 			}
 			return this;
 		}
