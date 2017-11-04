@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DracoGame.Android</RootNamespace>
+    <AssemblyName>DracoGame.Android</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidSupportedAbis>armeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions>.m4a</AndroidStoreUncompressedFileExtensions>
+    <MandroidI18n />
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <MonoGamePlatform>Android</MonoGamePlatform>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityMain.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="..\DracoGame.Shared\Content\Content.mgcb">
+      <Link>Content\Content.mgcb</Link>
+    </MonoGameContentReference>
+    <AndroidAsset Include="..\Nez\DefaultContent\NezDefaultBMFont.xnb">
+      <Link>Assets\Content\nez\NezDefaultBMFont.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Bevels.mgfxo">
+      <Link>Assets\Content\nez\effects\Bevels.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\BloomCombine.mgfxo">
+      <Link>Assets\Content\nez\effects\BloomCombine.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\BloomExtract.mgfxo">
+      <Link>Assets\Content\nez\effects\BloomExtract.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Crosshatch.mgfxo">
+      <Link>Assets\Content\nez\effects\Crosshatch.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\DeferredLighting.mgfxo">
+      <Link>Assets\Content\nez\effects\DeferredLighting.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\DeferredSprite.mgfxo">
+      <Link>Assets\Content\nez\effects\DeferredSprite.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Dissolve.mgfxo">
+      <Link>Assets\Content\nez\effects\Dissolve.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Dots.mgfxo">
+      <Link>Assets\Content\nez\effects\Dots.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\ForwardLighting.mgfxo">
+      <Link>Assets\Content\nez\effects\ForwardLighting.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\GaussianBlur.mgfxo">
+      <Link>Assets\Content\nez\effects\GaussianBlur.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Grayscale.mgfxo">
+      <Link>Assets\Content\nez\effects\Grayscale.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\HeatDistortion.mgfxo">
+      <Link>Assets\Content\nez\effects\HeatDistortion.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Invert.mgfxo">
+      <Link>Assets\Content\nez\effects\Invert.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Letterbox.mgfxo">
+      <Link>Assets\Content\nez\effects\Letterbox.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\MultiTexture.mgfxo">
+      <Link>Assets\Content\nez\effects\MultiTexture.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\MultiTextureOverlay.mgfxo">
+      <Link>Assets\Content\nez\effects\MultiTextureOverlay.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Noise.mgfxo">
+      <Link>Assets\Content\nez\effects\Noise.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\PaletteCycler.mgfxo">
+      <Link>Assets\Content\nez\effects\PaletteCycler.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\PixelGlitch.mgfxo">
+      <Link>Assets\Content\nez\effects\PixelGlitch.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\PolygonLight.mgfxo">
+      <Link>Assets\Content\nez\effects\PolygonLight.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Reflection.mgfxo">
+      <Link>Assets\Content\nez\effects\Reflection.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Scanlines.mgfxo">
+      <Link>Assets\Content\nez\effects\Scanlines.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Sepia.mgfxo">
+      <Link>Assets\Content\nez\effects\Sepia.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\SpriteAlphaTest.mgfxo">
+      <Link>Assets\Content\nez\effects\SpriteAlphaTest.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\SpriteBlinkEffect.mgfxo">
+      <Link>Assets\Content\nez\effects\SpriteBlinkEffect.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\SpriteEffect.mgfxo">
+      <Link>Assets\Content\nez\effects\SpriteEffect.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\SpriteLightMultiply.mgfxo">
+      <Link>Assets\Content\nez\effects\SpriteLightMultiply.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\SpriteLines.mgfxo">
+      <Link>Assets\Content\nez\effects\SpriteLines.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Twist.mgfxo">
+      <Link>Assets\Content\nez\effects\Twist.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\Vignette.mgfxo">
+      <Link>Assets\Content\nez\effects\Vignette.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\transitions\Squares.mgfxo">
+      <Link>Assets\Content\nez\effects\transitions\Squares.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\transitions\TextureWipe.mgfxo">
+      <Link>Assets\Content\nez\effects\transitions\TextureWipe.mgfxo</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Nez\DefaultContent\effects\transitions\Wind.mgfxo">
+      <Link>Assets\Content\nez\effects\transitions\Wind.mgfxo</Link>
+    </AndroidAsset>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Layout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DracoGame.Shared\DracoGame.Shared.csproj">
+      <Project>{88E4FB84-61AB-4035-867C-DAA65778BB50}</Project>
+      <Name>DracoGame.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nez\Nez.Portable\Nez.csproj">
+      <Project>{60B7197D-D0D5-405C-90A2-A56903E9B039}</Project>
+      <Name>Nez</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DracoGame.Desktop", "DracoGame.Desktop\DracoGame.Desktop.csproj", "{66BA2563-C616-41A7-A583-3C93E47BFA9A}"
 EndProject
@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DracoGame.Shared", "DracoGa
 	ProjectSection(ProjectDependencies) = postProject
 		{63E831F4-B847-4150-B5AF-CBE059EE27B8} = {63E831F4-B847-4150-B5AF-CBE059EE27B8}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DracoGame.Android", "DracoGame.Android\DracoGame.Android.csproj", "{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,12 @@ Global
 		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88E4FB84-61AB-4035-867C-DAA65778BB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8ECB2AE-4CB6-4B95-A40A-10147BB6E8B1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
