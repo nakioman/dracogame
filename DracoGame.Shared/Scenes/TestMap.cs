@@ -52,6 +52,7 @@ namespace DracoGame.Shared.Scenes
             // add a component to have the Camera follow the player
             var followCamera = camera.entity.addComponent(new FollowCamera(playerEntity));
             followCamera.mapLockEnabled = true;
+            followCamera.followLerp = 0.05f;
             followCamera.mapSize = new Vector2(tiledMap.width * tiledMap.tileWidth, tiledMap.height * tiledMap.tileHeight);
         }
     }

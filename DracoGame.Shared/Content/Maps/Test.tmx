@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="42" height="42" tilewidth="32" tileheight="32" nextobjectid="6">
- <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="1120" columns="28">
-  <image source="tileset.png" width="896" height="1280"/>
+ <tileset firstgid="1" name="Tileset" tilewidth="32" tileheight="32" tilecount="1120" columns="28">
+  <image source="Tileset.png" width="896" height="1280"/>
   <terraintypes>
    <terrain name="snow" tile="553"/>
    <terrain name="dirt" tile="385"/>

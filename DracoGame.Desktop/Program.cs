@@ -17,7 +17,9 @@ namespace DracoGame.Desktop
         {
             var config = new PlatformConfig
             {
-                IsFullScreen = false
+                IsFullScreen = false,
+                ScreenHeight = 540,
+                ScreenWidth = 888
             };
 
             using (var game = new GameMain(config))

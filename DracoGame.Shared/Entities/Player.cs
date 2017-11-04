@@ -26,7 +26,7 @@ namespace DracoGame.Shared.Entities
         private readonly TiledMap _tiledMap;
         private readonly TiledTileLayer _collisionLayer;
         private Sprite<Animations> _animation;
-        private float _moveSpeed = 30f;
+        private float _moveSpeed = 10f;
         private AstarGridGraph _astarGraph;
         private List<Point> _astarSearchPath;
         private Point _start, _end;
@@ -102,30 +102,43 @@ namespace DracoGame.Shared.Entities
             if (Input.leftMouseButtonPressed)
             {
                 var mousePosition = Core.scene.camera.mouseToWorldPoint();
-                _end = _tiledMap.worldToTilePosition(mousePosition);
-                _astarSearchPath = _astarGraph.search(_start, _end);
+                var start = _tiledMap.worldToTilePosition(position);
+                var end = _tiledMap.worldToTilePosition(mousePosition);
+                _astarSearchPath = _astarGraph.search(start, end);
+                _astarSearchPath?.Remove(start);
+                _animation.stop();
+            }
+
+            if (Input.touch.currentTouches.Any())
+            {
+                var touchPosition = Core.scene.camera.touchToWorldPoint(Input.touch.currentTouches.First());
+                var start = _tiledMap.worldToTilePosition(position);
+                var end = _tiledMap.worldToTilePosition(touchPosition);
+                _astarSearchPath = _astarGraph.search(start, end);
+                _astarSearchPath?.Remove(start);
+                _animation.stop();
             }
 
             if (_astarSearchPath != null && _astarSearchPath.Any())
             {
                 var point = _astarSearchPath.First();
                 var newPosition = _tiledMap.tileToWorldPosition(point);
-                var lessthan = Math.Abs(Vector2.Distance(position, newPosition)) < 1;
-                if (lessthan)
+                var delta = Vector2.Subtract(newPosition, position);
+                var motion = delta * _moveSpeed * Time.deltaTime;
+
+                if (Math.Abs(motion.Length()) < 1)
                 {
                     _astarSearchPath.RemoveAt(0);
-                    if (!_astarSearchPath.Any())
-                    {
-                        _start = point;
-                        _animation.stop();
-                    }
+                    _start = point;
                 }
-                else
+
+                PlayAnimation(motion);
+                _mover.move(motion, out _);
+
+                if (!_astarSearchPath.Any())
                 {
-                    var delta = Vector2.Subtract(newPosition, position);
-                    PlayAnimation(delta);
-                    var motion = delta * _moveSpeed * Time.deltaTime;
-                    _mover.move(motion, out _);
+                    position = newPosition;
+                    _animation.stop();
                 }
 
             }
@@ -134,14 +147,9 @@ namespace DracoGame.Shared.Entities
         private void PlayAnimation(Vector2 delta)
         {
             var animation = Animations.WalkUp;
-
-            if (delta.X > 0)
+            if (Math.Abs(delta.X) > Math.Abs(delta.Y))
             {
-                animation = Animations.WalkRight;
-            } else if (delta.X < 0)
-            {
-                animation = Animations.WalkLeft;
-
+                animation = delta.X > 0 ? Animations.WalkRight : Animations.WalkLeft;
             }
             else if (delta.Y > 0)
             {
