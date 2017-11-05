@@ -6,18 +6,25 @@ using Nez.Tiled;
 
 namespace DracoGame.Shared.Scenes
 {
-    public class TestMap : Scene
+    public class LocalMap : Scene
     {
-        public TestMap()
+        private readonly string _map;
+
+        public LocalMap() { }
+
+        public LocalMap(string map)
         {
+            _map = map;
             addRenderer(new DefaultRenderer());
+
+            LoadMap();
         }
 
-        public override void initialize()
+        public void LoadMap()
         {
             // load the TiledMap and display it with a TiledMapComponent
-            var tiledEntity = createEntity(Constants.Entities.TestMap);
-            var tiledMap = content.Load<TiledMap>(Constants.Content.Map.Test);
+            var tiledEntity = createEntity(_map);
+            var tiledMap = content.Load<TiledMap>(_map);
             var tiledMapComponent = tiledEntity.addComponent(new TiledMapComponent(tiledMap));
             tiledMapComponent.setLayersToRender(
                 Constants.MapLayers.Collision,

@@ -9,7 +9,6 @@ using Nez.AI.Pathfinding;
 using Nez.Sprites;
 using Nez.Textures;
 using Nez.Tiled;
-using Nez.Timers;
 
 namespace DracoGame.Shared.Entities
 {
@@ -29,7 +28,6 @@ namespace DracoGame.Shared.Entities
         private float _moveSpeed = 10f;
         private AstarGridGraph _astarGraph;
         private List<Point> _astarSearchPath;
-        private Point _start, _end;
         private Mover _mover;
 
         public Player(TiledMap tiledMap, string collisionLayer, Vector2 initialPosition)
@@ -39,7 +37,6 @@ namespace DracoGame.Shared.Entities
 
             _tiledMap = tiledMap;
             _collisionLayer = _tiledMap.getLayer<TiledTileLayer>(collisionLayer);
-            _start = _tiledMap.worldToTilePosition(initialPosition);
         }
 
         public override void onAddedToScene()
@@ -91,8 +88,7 @@ namespace DracoGame.Shared.Entities
                 subtextures[26],
             }));
 
-            _mover = addComponent<Mover>();
-
+            _mover = addComponent<Mover>(); 
         }
 
         public override void update()
@@ -129,7 +125,6 @@ namespace DracoGame.Shared.Entities
                 if (Math.Abs(motion.Length()) < 1)
                 {
                     _astarSearchPath.RemoveAt(0);
-                    _start = point;
                 }
 
                 PlayAnimation(motion);

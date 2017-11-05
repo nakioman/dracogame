@@ -49,7 +49,7 @@ namespace DracoGame.Shared.Menus
             newGameButton.onClicked += button =>
             {
                 TweenManager.stopAllTweens();
-                Core.startSceneTransition(new FadeTransition(Activator.CreateInstance<TestMap>));
+                Core.startSceneTransition(new TextureWipeTransition(() => new LocalMap(Constants.Content.Map.Test)));
             };
             _table.row().setPadTop(10);
 
@@ -59,22 +59,5 @@ namespace DracoGame.Shared.Menus
                 Core.exit();
             };
         }
-
-        //public override void update()
-        //{
-        //    base.update();
-
-        //    if (Input.touch.currentTouches.Any())
-        //    {
-        //        var touchPoint = camera.touchToWorldPoint(Input.touch.currentTouches.First());
-        //        var hit = _table.hit(touchPoint);
-
-        //        if (hit != null)
-        //        {
-        //            var button = hit as TextButton;
-        //            button.toggle();
-        //        }
-        //    }
-        //}
     }
 }
